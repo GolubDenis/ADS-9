@@ -14,14 +14,12 @@ BST<std::string> makeTree(const char* filename) {
     }
     std::string str;
     while (!file.eof()) {
-        char ch = file.get();
-        if (ch >= 'A' && ch <= 'Z') {
-            str += std::tolower(ch);
-        }
-        else if (ch >= 'a' && ch <= 'z') {
-            str += ch;
-        }
-        else {
+        char chr = file.get();
+        if (chr >= 'A' && chr <= 'Z') {
+            str += std::tolower(chr);
+        } else if (chr >= 'a' && chr <= 'z') {
+            str += chr;
+        } else {
             if (str != "") {
                 tree.add(str);
             }
